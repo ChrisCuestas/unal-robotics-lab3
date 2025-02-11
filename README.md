@@ -47,70 +47,111 @@ mamba --version
 
 ### 1.3. Instalación de ROS2 con RoboStack
 
+Abrir la terminal de Miniforge3 y seguir los siguientes pasos:
+
 1. Creación del env:
 
-```shell
-mamba create -n ros2_env python=3.11
-```
+    ```shell
+    mamba create -n ros2_env python=3.11
+    ```
 
-Para confirmar la creación, en listamos los envs:
+    Para confirmar la creación, en listamos los envs:
 
-```shell
-mamba env list
-```
-Si en la columna 'Name' aparece un asterisco hay que solucionarlo así:
-```shell
-conda config --append envs_dirs C:\Users\Zenbook\miniforge3\Library\envs
-```
-Como resultado debe aparecer así:
-```
-  Name      Active  Path
------------------------------------------------------------------------
-  base              C:\Users\Zenbook\.mamba
-                    C:\Users\Zenbook\anaconda3
-                    C:\Users\Zenbook\anaconda3\envs\pythonProject
-                    C:\Users\Zenbook\anaconda3\envs\pytorch
-            *       C:\Users\Zenbook\miniforge3
-  ros2_env          C:\Users\Zenbook\miniforge3\Library\envs\ros2_env
-```
+    ```shell
+    mamba env list
+    ```
+    Si en la columna 'Name' aparece un asterisco hay que solucionarlo así:
+    ```shell
+    conda config --append envs_dirs C:\Users\Zenbook\miniforge3\Library\envs
+    ```
+    Como resultado debe aparecer así:
+    ```
+      Name      Active  Path
+    -----------------------------------------------------------------------
+      base              C:\Users\Zenbook\.mamba
+                        C:\Users\Zenbook\anaconda3
+                        C:\Users\Zenbook\anaconda3\envs\pythonProject
+                        C:\Users\Zenbook\anaconda3\envs\pytorch
+                *       C:\Users\Zenbook\miniforge3
+      ros2_env          C:\Users\Zenbook\miniforge3\Library\envs\ros2_env
+    ```
 
 2. Activar el env:
 
-```shell
-mamba activate ros2_env
-```
+    ```shell
+    mamba activate ros2_env
+    ```
 
 3. Instalar conda en el env:
-```shell
-mamba install conda -n ros2_env
-```
+    ```shell
+    mamba install conda -n ros2_env
+    ```
 
 4. Agregar el canal conda-forge a la configuración del nuevo env creado:
-```shell
-conda config --env --add channels conda-forge
-```
+    ```shell
+    conda config --env --add channels conda-forge
+    ```
 
 5. Agregar el canal robostack-staging a la configuración del nuevo env creado:
-```shell
-conda config --env --add channels robostack-staging
-```
+    ```shell
+    conda config --env --add channels robostack-staging
+    ```
 
 6. Instalar ROS2 Humble en el env:
-```shell
-mamba install ros-humble-desktop
-```
-Para probar que todo está bien, se corre:
+    ```shell
+    mamba install ros-humble-desktop
+    ```
+    Para probar que todo está bien, se corre:
 
-```shell
-rviz2
-```
+    ```shell
+    rviz2
+    ```
 
 7. (Opcional) Instalación de paquetes de desarrollo
-```shell
-mamba install compilers cmake pkg-config make ninja colcon-common-extensions catkin_tools rosdep
-```
+    ```shell
+    mamba install compilers cmake pkg-config make ninja colcon-common-extensions catkin_tools rosdep
+    ```
 
 8. Para salir del env:
-```shell
-mamba deactivate
-```
+    ```shell
+    mamba deactivate
+    ```
+
+## __2. Instalación de Visual Studio 2022 Community__
+
+1. Descargar el instalador desde le página oficial: https://visualstudio.microsoft.com/es/vs/community/
+
+2. Click en Continuar para aceptar términos de licencia y esperar a que el instalador esté listo.
+
+3. En la pestaña 'Cargas de trabajo' seleccionar la opción "Desarrollo para el escritorio con C++".
+
+4. En el panel derecho aparencen muchas características opcionales, solamente dejar seleccionadas las siguientes:
+    - Herramientas de compilación de C++ de M...
+    - Herramientas de CMake en C++ para Wind...
+    - Windows 11 SDK.
+
+5. Seleccionar la mejor forma de instalación y dar click en "Instalar".
+
+## __3. Toolbox de ROS para MATLAB__
+
+1. Abrir MATLAB e ir a la opción "Get Add-Ons".
+
+2. Buscar el ROS Toolbox y dar click en el botón que de inicio a la instalación.
+
+3. Para comprobar que está correctamente instaldo y funcionando, en la ventana de comandos de MATLAB ejecutar:
+
+    ```MATLAB
+    ver('ros')
+    ```
+
+    Debería devolver algo como:
+
+    ```
+    -----------------------------------------------------------------------------------------------------
+    MATLAB Version: 24.2.0.2740171 (R2024b) Update 1
+    MATLAB License Number: 40830014
+    Operating System: Microsoft Windows 11 Home Version 10.0 (Build 26100)
+    Java Version: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
+    -----------------------------------------------------------------------------------------------------
+    ROS Toolbox                                           Version 24.2        (R2024b)
+    ```

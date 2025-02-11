@@ -114,3 +114,19 @@ mamba install compilers cmake pkg-config make ninja colcon-common-extensions cat
 ```shell
 mamba deactivate
 ```
+
+## __2. Instalación de Visual Studio 2022 Community__
+
+1. Descargar el instalador desde le página oficial: https://visualstudio.microsoft.com/es/vs/community/
+
+2. Click en Continuar para aceptar términos de licencia y esperar a que el instalador esté listo.
+
+3. En la pestaña 'Cargas de trabajo' seleccionar la opción "Desarrollo para el escritorio con C++".
+
+4. En el panel derecho aparencen muchas características opcionales, solamente dejar seleccionadas las siguientes:
+    - Herramientas de compilación de C++ de M...
+    - Herramientas de CMake en C++ para Wind...
+    - Windows 11 SDK.
+
+5. Seleccionar la mejor forma de instalación y dar click en "Instalar".
+

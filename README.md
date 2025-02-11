@@ -143,3 +143,15 @@ Abrir la terminal de Miniforge3 y seguir los siguientes pasos:
     ```MATLAB
     ver('ros')
     ```
+
+    Debería devolver algo como:
+
+    ```
+    -----------------------------------------------------------------------------------------------------
+    MATLAB Version: 24.2.0.2740171 (R2024b) Update 1
+    MATLAB License Number: 40830014
+    Operating System: Microsoft Windows 11 Home Version 10.0 (Build 26100)
+    Java Version: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
+    -----------------------------------------------------------------------------------------------------
+    ROS Toolbox                                           Version 24.2        (R2024b)
+    ```

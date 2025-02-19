@@ -155,3 +155,63 @@ Abrir la terminal de Miniforge3 y seguir los siguientes pasos:
     -----------------------------------------------------------------------------------------------------
     ROS Toolbox                                           Version 24.2        (R2024b)
     ```
+
+## __4. Creando workspaces de ROS2__
+
+En la terminal del Developer Command Prompt for VS 2022 (Terminal del Visual Studio 2022 Community) 
+
+1. Activar el mamba env
+
+    ```shell
+    mamba activate ros2_env
+    ```
+
+2. Crear una carpeta en donde van a estar todos los WorkSpaces:
+
+    ```shell
+    mkdir workspaces
+    ```
+
+3. Crear un workspace:
+
+    ```shell
+    cd workspaces
+    mkdir my_workspace_ws
+    ```
+
+4. Crear la carpeta src dentro del nuevo workspace:
+
+    ```shell
+    cd my_workspace_ws
+    mkdir src
+    ```
+
+5. Estando en la carpeta del workspace:
+
+    ```shell
+    colcon build
+    ```
+
+    Esto crea las siguientes carpetas:
+    - log
+    - build
+    - install
+
+## __5. Creando paquetes de ROS2__
+
+En la misma terminal del Developer Command Prompt for VS 2022 (Terminal del Visual Studio 2022 Community) y ubicados en la carpeta src del workspace deseado:
+
+```shell
+ros2 pkg create <nombre_pkg> --build-type <build-type> --dependencies rclpy <depend1> <depend2> ...
+```
+
+Ejemplo para crear un paquete en C++:
+```shell
+ros2 pkg create my_first_pkg --build-type ament_cmake --dependencies rclcpp std_msgs
+```
+
+Ejemplo para crear un paquete en Python:
+```shell
+ros2 pkg create my_first_pkg --build-type ament_python --dependencies rclpy std_msgs
+```
+
